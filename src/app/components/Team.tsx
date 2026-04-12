@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { Camera } from "lucide-react";
 
@@ -6,36 +7,36 @@ const team = [
     name: "Tammy",
     role: "Owner & Lead Aesthetician",
     specialty: "Lash Extensions & Facials",
+    image: "/images/team-tammy.jpg",
     bio: "With over a decade of experience, Tammy founded The Skin Cafe to create a space where beauty meets wellness. Her lash artistry is legendary — clients say you look like a normal woman with fabulous eyes.",
-    gradient: "from-champagne via-champagne-dark to-mocha",
   },
   {
     name: "Starr Elsy",
     role: "Senior Specialist",
     specialty: "Lashes & Brows",
+    image: "/images/team-starr.jpg",
     bio: "Known for her calming energy and delicate technique, Starr has been a client favorite for over 7 years. Her attention to detail and personalized approach keeps clients coming back.",
-    gradient: "from-rose via-rose-dark to-mocha",
   },
   {
     name: "Chelsea",
     role: "Facial Specialist",
     specialty: "Luxury Facials & Peels",
+    image: "/images/team-chelsea.jpg",
     bio: "Chelsea delivers what clients call 'the best facial ever.' Her expertise with advanced treatments and genuine care creates a truly pampering experience with visible results.",
-    gradient: "from-sage via-sage-light to-champagne",
   },
   {
     name: "Adriana",
     role: "Beauty Specialist",
     specialty: "Lashes, Brows & Facials",
+    image: "/images/team-adriana.jpg",
     bio: "A true multi-talent, Adriana excels at lash extensions, brow design, and facial treatments. Her versatility and warm personality make every visit feel special.",
-    gradient: "from-champagne-dark via-mocha to-espresso-light",
   },
   {
     name: "Cydnii",
     role: "Lash Artist",
     specialty: "Eyelash Extensions",
+    image: "/images/team-cydnii.jpg",
     bio: "Cydnii combines expertise with efficiency, delivering flawless lash extensions with professionalism and a sweet personality that makes the process enjoyable.",
-    gradient: "from-rose-light via-champagne to-sage",
   },
 ];
 
@@ -63,15 +64,16 @@ export default function Team() {
           {team.map((member, i) => (
             <ScrollReveal key={member.name} delay={i * 100}>
               <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-espresso/8 transition-all duration-500 hover:-translate-y-2">
-                {/* Gradient avatar */}
-                <div className={`aspect-[3/4] bg-gradient-to-br ${member.gradient} relative overflow-hidden`}>
+                {/* Team photo */}
+                <div className="aspect-[3/4] relative overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} — ${member.role}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 20vw"
+                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                  {/* Initial */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/25 font-[var(--font-display)] text-7xl font-bold select-none">
-                      {member.name[0]}
-                    </span>
-                  </div>
                   {/* Hover bio overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                     <p className="text-white/90 text-xs leading-relaxed">

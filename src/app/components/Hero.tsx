@@ -92,13 +92,17 @@ export default function Hero() {
           }`}
         >
           <a
-            href="#book-gilbert"
+            href="https://book.squareup.com/appointments/y5eu65pg42prz2/location/WVJ7770QWMRGA/availability"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-shimmer group bg-gradient-to-r from-champagne to-champagne-dark text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-2xl hover:shadow-champagne/30 transition-all hover:-translate-y-1 w-full sm:w-auto"
           >
             Book in Gilbert
           </a>
           <a
-            href="#book-scottsdale"
+            href="https://book.squareup.com/appointments/y5eu65pg42prz2/location/86SPWSYBFQR7Z/services/OGM2CC55EWUWGQEA73EXVYUN?savt=9af9b333-518a-4f8b-a281-58f492606f9b"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-shimmer group bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/20 hover:shadow-2xl transition-all hover:-translate-y-1 w-full sm:w-auto"
           >
             Book in Scottsdale

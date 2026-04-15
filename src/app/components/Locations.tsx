@@ -13,6 +13,7 @@ const locations = [
     gradient: "from-champagne to-champagne-dark",
     image: "/images/salon-interior.jpg",
     mapQuery: "4100+S+Lindsay+Rd+%23121+Gilbert+AZ+85297",
+    bookingUrl: "https://book.squareup.com/appointments/y5eu65pg42prz2/location/WVJ7770QWMRGA/availability",
   },
   {
     name: "Scottsdale",
@@ -24,6 +25,7 @@ const locations = [
     gradient: "from-rose to-rose-dark",
     image: "/images/spa-candles.jpg",
     mapQuery: "10333+N+Scottsdale+Rd+Unit+1+Scottsdale+AZ+85253",
+    bookingUrl: "https://book.squareup.com/appointments/y5eu65pg42prz2/location/86SPWSYBFQR7Z/services/OGM2CC55EWUWGQEA73EXVYUN?savt=9af9b333-518a-4f8b-a281-58f492606f9b",
   },
 ];
 
@@ -109,7 +111,9 @@ export default function Locations() {
                   </div>
 
                   <a
-                    href={`#book-${loc.name.toLowerCase()}`}
+                    href={loc.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`inline-flex items-center gap-2 bg-gradient-to-r ${loc.gradient} text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg transition-all hover:-translate-y-0.5 btn-shimmer`}
                   >
                     Book at {loc.name}

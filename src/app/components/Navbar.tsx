@@ -104,7 +104,9 @@ export default function Navbar() {
               {bookingOpen && (
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl shadow-espresso/10 border border-latte overflow-hidden animate-scale-in origin-top-right">
                   <a
-                    href="#book-gilbert"
+                    href="https://book.squareup.com/appointments/y5eu65pg42prz2/location/WVJ7770QWMRGA/availability"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setBookingOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 hover:bg-cream transition-colors"
                   >
@@ -116,7 +118,9 @@ export default function Navbar() {
                   </a>
                   <div className="border-t border-latte" />
                   <a
-                    href="#book-scottsdale"
+                    href="https://book.squareup.com/appointments/y5eu65pg42prz2/location/86SPWSYBFQR7Z/services/OGM2CC55EWUWGQEA73EXVYUN?savt=9af9b333-518a-4f8b-a281-58f492606f9b"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setBookingOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 hover:bg-cream transition-colors"
                   >
@@ -191,14 +195,18 @@ export default function Navbar() {
               (480) 619-0046
             </a>
             <a
-              href="#book-gilbert"
+              href="https://book.squareup.com/appointments/y5eu65pg42prz2/location/WVJ7770QWMRGA/availability"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-champagne to-champagne-dark text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
             >
               Book — Gilbert
             </a>
             <a
-              href="#book-scottsdale"
+              href="https://book.squareup.com/appointments/y5eu65pg42prz2/location/86SPWSYBFQR7Z/services/OGM2CC55EWUWGQEA73EXVYUN?savt=9af9b333-518a-4f8b-a281-58f492606f9b"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-rose to-rose-dark text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
             >

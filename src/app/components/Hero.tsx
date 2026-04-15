@@ -92,13 +92,13 @@ export default function Hero() {
           }`}
         >
           <a
-            href="#booking"
+            href="#book-gilbert"
             className="btn-shimmer group bg-gradient-to-r from-champagne to-champagne-dark text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-2xl hover:shadow-champagne/30 transition-all hover:-translate-y-1 w-full sm:w-auto"
           >
             Book in Gilbert
           </a>
           <a
-            href="#booking"
+            href="#book-scottsdale"
             className="btn-shimmer group bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/20 hover:shadow-2xl transition-all hover:-translate-y-1 w-full sm:w-auto"
           >
             Book in Scottsdale

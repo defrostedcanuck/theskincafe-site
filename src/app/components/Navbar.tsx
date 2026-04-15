@@ -104,7 +104,7 @@ export default function Navbar() {
               {bookingOpen && (
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl shadow-espresso/10 border border-latte overflow-hidden animate-scale-in origin-top-right">
                   <a
-                    href="#booking"
+                    href="#book-gilbert"
                     onClick={() => setBookingOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 hover:bg-cream transition-colors"
                   >
@@ -116,7 +116,7 @@ export default function Navbar() {
                   </a>
                   <div className="border-t border-latte" />
                   <a
-                    href="#booking"
+                    href="#book-scottsdale"
                     onClick={() => setBookingOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 hover:bg-cream transition-colors"
                   >
@@ -191,14 +191,14 @@ export default function Navbar() {
               (480) 619-0046
             </a>
             <a
-              href="#booking"
+              href="#book-gilbert"
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-champagne to-champagne-dark text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
             >
               Book — Gilbert
             </a>
             <a
-              href="#booking"
+              href="#book-scottsdale"
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-rose to-rose-dark text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
             >

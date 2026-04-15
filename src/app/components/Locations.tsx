@@ -109,7 +109,7 @@ export default function Locations() {
                   </div>
 
                   <a
-                    href="#booking"
+                    href={`#book-${loc.name.toLowerCase()}`}
                     className={`inline-flex items-center gap-2 bg-gradient-to-r ${loc.gradient} text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg transition-all hover:-translate-y-0.5 btn-shimmer`}
                   >
                     Book at {loc.name}

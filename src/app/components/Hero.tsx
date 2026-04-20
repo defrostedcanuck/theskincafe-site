@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Sparkles, Star } from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -51,18 +51,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        {/* Badge */}
-        <div
-          className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8 transition-all duration-700 ${
-            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          <Sparkles size={14} className="text-champagne" />
-          <span className="text-white/90 text-sm font-medium tracking-wide">
-            Gilbert & Scottsdale, Arizona
-          </span>
-        </div>
-
         {/* Headline */}
         <h1
           className={`font-[var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-6 transition-all duration-700 delay-200 ${

@@ -90,11 +90,36 @@
 
 ## Traceability
 
-(Populated by `/gsd-plan-phase` as phases are mapped.)
+| REQ-ID   | Phase   | Status  |
+|----------|---------|---------|
+| COMM-01  | Phase 2 | Pending |
+| COMM-02  | Phase 2 | Pending |
+| COMM-03  | Phase 2 | Pending |
+| COMM-04  | Phase 2 | Pending |
+| LEAD-01  | Phase 2 | Pending |
+| LEAD-02  | Phase 2 | Pending |
+| LEAD-03  | Phase 2 | Pending |
+| LEAD-04  | Phase 2 | Pending |
+| LEAD-05  | Phase 2 | Pending |
+| SEO-01   | Phase 3 | Pending |
+| SEO-02   | Phase 3 | Pending |
+| SEO-03   | Phase 3 | Pending |
+| SEO-04   | Phase 3 | Pending |
+| SEO-05   | Phase 3 | Pending |
+| ANLY-01  | Phase 3 | Pending |
+| ANLY-02  | Phase 3 | Pending |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 4 | Pending |
+| INFRA-05 | Phase 1 | Pending |
+| INFRA-06 | Phase 4 | Pending |
+| POLISH-01| Phase 4 | Pending |
+| POLISH-02| Phase 4 | Pending |
+| POLISH-03| Phase 4 | Pending |
+| POLISH-04| Phase 4 | Pending |
 
-| REQ-ID | Phase | Status |
-|--------|-------|--------|
-| ... | ... | ... |
+**Coverage:** 26/26 Active requirements mapped. No orphans, no duplicates.
 
 ---
-*Last updated: 2026-04-20 after initialization*
+*Last updated: 2026-04-20 after roadmap creation*

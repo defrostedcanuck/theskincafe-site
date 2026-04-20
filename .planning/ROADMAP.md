@@ -34,7 +34,13 @@
   - Create Resend account; invite Craig; approve domain-verification DNS records when requested.
   - Create/confirm Cloudflare account owning the `theskincafe.com` zone; invite Craig as Admin.
   - Generate Square production API credentials (or approve Craig generating them from a client-logged-in session) with Customer Directory write permission.
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 01-01-PLAN.md — DNS baseline audit + handoff-cutover checklist (Craig-unblocked; Wave 1)
+- [ ] 01-02-PLAN.md — Vercel project transfer to client team + env-var catalog scaffold (Wave 2; blocks on client Vercel team + billing)
+- [ ] 01-03-PLAN.md — Cloudflare zone creation + DNS mirror + TTL reduction (NS flip deferred to Phase 4) (Wave 2; blocks on client Cloudflare invite)
+- [ ] 01-04-PLAN.md — Resend account + sending-domain verification + Vercel env seed (Wave 3; blocks on client Resend invite + Plans 02 + 03)
+- [ ] 01-05-PLAN.md — Square Developer app + sandbox/prod token issuance + Vercel env seed (Wave 3; blocks on client Square access + Plan 02)
 
 ### Phase 2: Community & Lead Capture
 **Goal**: A visitor can feel the Skin Cafe's decades-of-care brand in the "Our Community" section, opt into the future education hub, and have their email land in the client's existing Square Marketing list — while staff get notified of contact-form submissions in near-real-time.
@@ -83,7 +89,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Client Infrastructure Provisioning | 0/0 | Not started | - |
+| 1. Client Infrastructure Provisioning | 0/5 | Plans created | - |
 | 2. Community & Lead Capture | 0/0 | Not started | - |
 | 3. SEO & Analytics Baseline | 0/0 | Not started | - |
 | 4. Launch Polish & Handoff | 0/0 | Not started | - |

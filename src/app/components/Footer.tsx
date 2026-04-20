@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Heart, Camera, Globe, Phone, Mail } from "lucide-react";
 
 const quickLinks = [
@@ -31,9 +32,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-champagne to-rose flex items-center justify-center text-white font-[var(--font-display)] text-lg font-bold">
-                SC
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="The Skin Cafe"
+                width={360}
+                height={130}
+                className="h-10 w-auto"
+              />
               <div>
                 <span className="font-[var(--font-display)] text-lg font-semibold text-white block">
                   The Skin Cafe

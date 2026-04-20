@@ -41,33 +41,17 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="#" className="flex items-center group">
             <Image
               src="/images/logo.png"
               alt="The Skin Cafe"
               width={360}
               height={130}
               priority
-              className={`h-10 w-auto transition-all group-hover:scale-110 ${
+              className={`h-20 w-auto transition-all group-hover:scale-110 ${
                 scrolled ? "invert" : ""
               }`}
             />
-            <div>
-              <span
-                className={`font-[var(--font-display)] text-xl font-semibold tracking-wide transition-colors ${
-                  scrolled ? "text-espresso" : "text-white"
-                }`}
-              >
-                The Skin Cafe
-              </span>
-              <span
-                className={`block text-[10px] uppercase tracking-[0.25em] transition-colors ${
-                  scrolled ? "text-mocha/60" : "text-white/60"
-                }`}
-              >
-                Beauty & Aesthetics
-              </span>
-            </div>
           </a>
 
           {/* Desktop nav */}

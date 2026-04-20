@@ -31,22 +31,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center mb-4">
               <Image
                 src="/images/logo.png"
                 alt="The Skin Cafe"
                 width={360}
                 height={130}
-                className="h-10 w-auto"
+                className="h-20 w-auto"
               />
-              <div>
-                <span className="font-[var(--font-display)] text-lg font-semibold text-white block">
-                  The Skin Cafe
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-                  Beauty & Aesthetics
-                </span>
-              </div>
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Arizona&apos;s premier destination for facials, lash extensions, brows,

@@ -8,7 +8,8 @@ const team = [
     role: "Owner & Aesthetician",
     specialty: "Lashes, Brows & Advanced Skin",
     experience: "16 years as an aesthetician",
-    image: "/images/team-tammy.jpg",
+    image: "/images/Tamara.jpg",
+    focal: "65% 25%",
     bio: "Passionate about making every person feel special and beautiful. Tamara brings 16 years of aesthetics experience to advanced lash work, microblading, medical-grade peels, and microneedling — every visit feels personal and creative.",
     acceptingClients: true,
   },
@@ -18,6 +19,7 @@ const team = [
     specialty: "Aesthetic Medicine & Anti-Aging",
     experience: "Nearly 13 years in aesthetics",
     image: "/images/team-placeholder.jpg",
+    focal: "50% 50%",
     bio: "Naturopathic doctor and aesthetic medicine expert who has overseen multiple clinics as medical director. She has personally trained hundreds of healthcare professionals in botox, dermal fillers, and cosmetic lasers — and believes knowledge is meant to be shared.",
     acceptingClients: true,
   },
@@ -26,7 +28,8 @@ const team = [
     role: "Aesthetician",
     specialty: "Lashes, Brows & Facials",
     experience: "Career aesthetician",
-    image: "/images/team-starr.jpg",
+    image: "/images/Star.jpg",
+    focal: "55% 28%",
     bio: "A former graphic designer who pivoted into aesthetics after her own skin journey. Starr is certified in classic + volume lashes, microneedling, dermaplane, TrueBrow™ Level 2, and medical-grade peels — and takes pride in watching clients gain confidence.",
     acceptingClients: true,
   },
@@ -35,7 +38,8 @@ const team = [
     role: "Aesthetician",
     specialty: "Facials & Peels",
     experience: "Medical background",
-    image: "/images/team-chelsea.jpg",
+    image: "/images/Chelsea.jpg",
+    focal: "52% 22%",
     bio: "Blends her healthcare foundation with the art of skincare to deliver treatments that are both restorative and results-driven. Certified in microneedling, dermaplane, and Skin Script / PCA / Perfect Peel protocols.",
     acceptingClients: true,
   },
@@ -44,7 +48,8 @@ const team = [
     role: "Aesthetician",
     specialty: "Skincare & Lashes",
     experience: "Licensed aesthetician",
-    image: "/images/team-cydnii.jpg",
+    image: "/images/Cyndii.jpg",
+    focal: "58% 22%",
     bio: "Discovered her passion for skincare through her own journey and loves walking clients through theirs. Certified in dermaplane, lash lift & tint, and PCA peels.",
     acceptingClients: true,
   },
@@ -53,7 +58,8 @@ const team = [
     role: "Cosmetologist & Lash Artist",
     specialty: "Classic & Volume Lashes",
     experience: "8 years as a lash artist",
-    image: "/images/team-placeholder.jpg",
+    image: "/images/kathy.jpg",
+    focal: "60% 28%",
     bio: "Eight years of focus on a single craft — beautifully executed classic and volume lashes customized to each client. Also a licensed cosmetologist and fine-line tattoo artist.",
     acceptingClients: true,
   },
@@ -62,7 +68,8 @@ const team = [
     role: "Aesthetician",
     specialty: "Sugaring & Waxing",
     experience: "Since 2022",
-    image: "/images/team-placeholder.jpg",
+    image: "/images/olivia.jpg",
+    focal: "52% 22%",
     bio: "Sugaring and waxing specialist who has traveled to open and train new franchise locations. Certified in Brazilian sugaring and waxing, dermaplaning, microdermabrasion, chemical peels, lash lifts, and brow laminations.",
     acceptingClients: true,
   },
@@ -71,7 +78,8 @@ const team = [
     role: "Hair Stylist",
     specialty: "Cut & Color",
     experience: "Since 2003",
-    image: "/images/team-placeholder.jpg",
+    image: "/images/Tasha.jpg",
+    focal: "48% 28%",
     bio: "Serving Arizona clients since 2003. Tasha blends creativity with world-class care, continually training in the latest trends and classic techniques.",
     acceptingClients: false,
   },
@@ -107,7 +115,8 @@ export default function Team() {
                     src={member.image}
                     alt={`${member.name} — ${member.role}`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    style={{ objectPosition: member.focal }}
+                    className="object-cover scale-[1.35] group-hover:scale-[1.45] transition-transform duration-700"
                     sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 import { Camera, Quote, Star } from 'lucide-react';
 
-// 9 testimonials preserved verbatim from the retired Testimonials.tsx.
+// 9 client quotes preserved verbatim from the retired carousel component.
 // Kept inline here (not an external data file) per Plan 02-05 — this is the
 // only place in the codebase they render now.
 const testimonials = [

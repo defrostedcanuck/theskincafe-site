@@ -132,8 +132,10 @@ export default function Team() {
                   <p className="text-champagne text-xs font-medium uppercase tracking-wider mb-1">
                     {member.role}
                   </p>
-                  <p className="text-mocha/50 text-xs mb-1">{member.specialty}</p>
-                  <p className="text-mocha/40 text-[11px] italic">{member.experience}</p>
+                  <span className="inline-flex items-center gap-1.5 mt-2 mb-2 px-2.5 py-1 rounded-full bg-champagne/10 border border-champagne/30 text-espresso text-[11px] font-semibold tracking-wide">
+                    {member.experience}
+                  </span>
+                  <p className="text-mocha/50 text-xs">{member.specialty}</p>
                 </div>
                 {/* Social link */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -1,16 +1,36 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import ScrollReveal from "./ScrollReveal";
 import { Send, Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { submitContactForm } from "@/app/actions/contact";
+import type { FormState } from "@/app/actions/types";
+
+const initialState: FormState = {};
+
+// SubmitButton is a separate component specifically so `useFormStatus()` can
+// read the pending state of the ancestor <form>. `useFormStatus` only works
+// from within a child of the form element, which is the documented Next.js 16
+// pattern (see node_modules/next/dist/docs/01-app/02-guides/forms.md).
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="btn-shimmer w-full bg-gradient-to-r from-champagne to-champagne-dark text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-lg hover:shadow-champagne/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+    >
+      <Send size={16} />
+      {pending ? "Sending…" : "Send Message"}
+    </button>
+  );
+}
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  // useActionState lives in `react` (NOT `react-dom`) in React 19. The old
+  // react-dom `useFormState` is deprecated; see RESEARCH.md Pitfall 1.
+  const [state, formAction] = useActionState(submitContactForm, initialState);
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-white relative">
@@ -103,7 +123,7 @@ export default function Contact() {
           {/* Form */}
           <ScrollReveal animation="slide-right" className="lg:col-span-3">
             <div className="bg-cream rounded-3xl p-8 sm:p-10">
-              {submitted ? (
+              {state.success ? (
                 <div className="text-center py-12 animate-scale-in">
                   <div className="w-16 h-16 rounded-full bg-sage/20 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle size={32} className="text-sage" />
@@ -112,11 +132,12 @@ export default function Contact() {
                     Message Sent!
                   </h3>
                   <p className="text-mocha/70">
-                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                    {state.message ??
+                      "Thank you for reaching out. We'll get back to you within 24 hours."}
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form action={formAction} className="space-y-5" noValidate>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label
@@ -127,8 +148,10 @@ export default function Contact() {
                       </label>
                       <input
                         id="name"
+                        name="name"
                         type="text"
                         required
+                        autoComplete="name"
                         className="w-full px-4 py-3 rounded-xl bg-white border border-latte text-espresso placeholder:text-mocha/30 focus:outline-none focus:ring-2 focus:ring-champagne/30 focus:border-champagne transition-all"
                         placeholder="Your name"
                       />
@@ -142,8 +165,10 @@ export default function Contact() {
                       </label>
                       <input
                         id="email"
+                        name="email"
                         type="email"
                         required
+                        autoComplete="email"
                         className="w-full px-4 py-3 rounded-xl bg-white border border-latte text-espresso placeholder:text-mocha/30 focus:outline-none focus:ring-2 focus:ring-champagne/30 focus:border-champagne transition-all"
                         placeholder="your@email.com"
                       />
@@ -159,6 +184,7 @@ export default function Contact() {
                     </label>
                     <select
                       id="location"
+                      name="location"
                       className="w-full px-4 py-3 rounded-xl bg-white border border-latte text-espresso focus:outline-none focus:ring-2 focus:ring-champagne/30 focus:border-champagne transition-all"
                     >
                       <option value="">Select a location</option>
@@ -177,6 +203,7 @@ export default function Contact() {
                     </label>
                     <select
                       id="service"
+                      name="service"
                       className="w-full px-4 py-3 rounded-xl bg-white border border-latte text-espresso focus:outline-none focus:ring-2 focus:ring-champagne/30 focus:border-champagne transition-all"
                     >
                       <option value="">What are you interested in?</option>
@@ -199,6 +226,7 @@ export default function Contact() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
                       required
                       className="w-full px-4 py-3 rounded-xl bg-white border border-latte text-espresso placeholder:text-mocha/30 focus:outline-none focus:ring-2 focus:ring-champagne/30 focus:border-champagne transition-all resize-none"
@@ -206,13 +234,16 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="btn-shimmer w-full bg-gradient-to-r from-champagne to-champagne-dark text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-lg hover:shadow-champagne/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
-                  >
-                    <Send size={16} />
-                    Send Message
-                  </button>
+                  <SubmitButton />
+
+                  {state.error && (
+                    <p
+                      className="text-rose text-sm mt-2"
+                      role="alert"
+                    >
+                      {state.error}
+                    </p>
+                  )}
                 </form>
               )}
             </div>

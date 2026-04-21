@@ -67,7 +67,11 @@ Plans:
   4. The Gilbert and Scottsdale location pages emit valid `LocalBusiness` JSON-LD that passes Google's Rich Results test with zero errors.
   5. Vercel Analytics is enabled on the client's Vercel team and shows pageview + Web Vitals data in the dashboard within 24 hours of production deploy.
   6. Custom events fire and appear in Vercel Analytics for: per-location booking CTA click (distinguishable Gilbert vs Scottsdale) and "Behind the Glow" email signup.
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 03-01-PLAN.md — Metadata baseline (metadataBase + title template + OG/Twitter/canonical/robots) + sitemap.ts + robots.ts (SEO-01, SEO-02, SEO-03); Wave 1
+- [ ] 03-02-PLAN.md — LocalBusiness @graph JSON-LD for Gilbert + Scottsdale + static 1200x630 OG image (SEO-04, SEO-05); Wave 2; depends on 03-01 metadataBase
+- [ ] 03-03-PLAN.md — @vercel/analytics install + BookButton client extraction + booking_click custom events (ANLY-01, ANLY-02); Wave 2; depends on 03-01 layout metadata
 
 ### Phase 4: Launch Polish & Handoff
 **Goal**: The site is visibly and measurably production-ready on the client's own domain, the client has accepted one round of revisions, and the client has documentation to operate and take over every service without Craig.
@@ -80,8 +84,13 @@ Plans:
   4. Lighthouse mobile run on the production homepage returns Performance ≥ 90, with the report committed to the repo or linked from the handoff doc.
   5. One round of client-requested revisions has been captured in writing, implemented, and signed off by the client.
   6. A handoff document exists in the repo listing every service (Vercel, Resend, Cloudflare, Square, Vercel Analytics), the account owner, login URL, where credentials live, how to rotate them, and how to reach Craig for support.
-**Plans**: TBD
+**Plans**: 4 plans
 **UI hint**: yes
+Plans:
+- [ ] 04-01-PLAN.md — Dark logo swap + sizes prop in Navbar (POLISH-01); Wave 1; gated on client-delivered dark-on-light logo asset
+- [ ] 04-02-PLAN.md — Playwright responsive harness (375/768/1280) + Lighthouse mobile baseline on preview URL (POLISH-02, POLISH-03 baseline); Wave 1
+- [ ] 04-03-PLAN.md — One bounded round of client revisions + conditional perf fixes from Plan 02 findings + post-revision Lighthouse (POLISH-03 preview target ≥93, POLISH-04); Wave 2; client-blocking
+- [ ] 04-04-PLAN.md — DNS NS flip + Vercel domain attach + SSL verify + final production Lighthouse (≥90) + HANDOFF.md + Phase 1 checklist close + GitHub repo transfer decision + client sign-off (INFRA-04, INFRA-06, POLISH-03 final deliverable); Wave 3; strictly serial
 
 ---
 
@@ -91,8 +100,8 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Client Infrastructure Provisioning | 0/5 | Plans created | - |
 | 2. Community & Lead Capture | 0/0 | Not started | - |
-| 3. SEO & Analytics Baseline | 0/0 | Not started | - |
-| 4. Launch Polish & Handoff | 0/0 | Not started | - |
+| 3. SEO & Analytics Baseline | 0/3 | Plans created | - |
+| 4. Launch Polish & Handoff | 0/4 | Plans created | - |
 
 ---
 

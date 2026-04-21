@@ -53,7 +53,13 @@ Plans:
   4. An email submitted through the teaser appears in the client's Square Customer Directory within 60 seconds, tagged/listed such that it lands in their existing Square Marketing list.
   5. When the Square API is unreachable or rejects a request, the form displays a graceful fallback message to the visitor, the failure is logged server-side, and no uncaught errors reach the browser console.
   6. A contact-form submission triggers a Resend transactional email to the staff notification address within 30 seconds, containing the submitter's name, email, and message.
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 02-01-PLAN.md — Install deps + scaffold vitest + SDK singletons + server-action skeletons (Wave 1; unblocks everything)
+- [ ] 02-02-PLAN.md — Wire Contact.tsx to submitContactForm via Resend v6 (LEAD-05; Wave 2)
+- [ ] 02-03-PLAN.md — Build BehindTheGlow component + subscribeEmail with Square search-before-create dedup (COMM-04, LEAD-01..04; Wave 2)
+- [ ] 02-04-PLAN.md — Raise visual prominence of years-in-industry on Team section (COMM-02; Wave 2)
+- [ ] 02-05-PLAN.md — Build Community.tsx (Pattern A) + retire Testimonials + mount BehindTheGlow in page.tsx (COMM-01, COMM-03; Wave 3)
 **UI hint**: yes
 
 ### Phase 3: SEO & Analytics Baseline
@@ -99,7 +105,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Client Infrastructure Provisioning | 0/5 | Plans created | - |
-| 2. Community & Lead Capture | 0/0 | Not started | - |
+| 2. Community & Lead Capture | 0/5 | Plans created | - |
 | 3. SEO & Analytics Baseline | 0/3 | Plans created | - |
 | 4. Launch Polish & Handoff | 0/4 | Plans created | - |
 

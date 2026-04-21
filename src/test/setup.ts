@@ -15,8 +15,8 @@ class MockIntersectionObserver {
   thresholds: ReadonlyArray<number> = [];
 }
 
-// @ts-expect-error — assigning a stub onto the global
-globalThis.IntersectionObserver = MockIntersectionObserver;
+globalThis.IntersectionObserver =
+  MockIntersectionObserver as unknown as typeof IntersectionObserver;
 
 afterEach(() => {
   cleanup();

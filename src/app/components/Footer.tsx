@@ -6,10 +6,10 @@ const quickLinks = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/services" },
   { label: "Our Team", href: "/team" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Locations", href: "/#locations" },
+  { label: "Behind the Glow", href: "/behind-the-glow" },
   { label: "Gilbert", href: "/locations/gilbert" },
   { label: "Scottsdale", href: "/locations/scottsdale" },
+  { label: "Gallery", href: "/#gallery" },
   { label: "Contact", href: "/#contact" },
 ];
 

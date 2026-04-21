@@ -1,13 +1,13 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Services from "./components/Services";
-import Team from "./components/Team";
+import ServicesTeaser from "./components/ServicesTeaser";
+import TeamTeaser from "./components/TeamTeaser";
 import Community from "./components/Community";
 import Gallery from "./components/Gallery";
 import Locations from "./components/Locations";
 import BookingCTA from "./components/BookingCTA";
-import BehindTheGlow from "./components/BehindTheGlow";
+import BehindTheGlowTeaser from "./components/BehindTheGlowTeaser";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PromoBanner from "./components/PromoBanner";
@@ -19,13 +19,13 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Services />
-        <Team />
+        <ServicesTeaser />
+        <TeamTeaser />
         <Community />
         <Gallery />
         <Locations />
         <BookingCTA />
-        <BehindTheGlow />
+        <BehindTheGlowTeaser />
         <Contact />
       </main>
       <Footer />

@@ -29,6 +29,11 @@ interface Service {
   popular?: boolean;
 }
 
+interface ServicesProps {
+  /** Hide the internal section header (use when a page-level hero already provides title + intro). */
+  showHeader?: boolean;
+}
+
 const services: Record<string, Service[]> = {
   skin: [
     {
@@ -193,7 +198,7 @@ const services: Record<string, Service[]> = {
   ],
 };
 
-export default function Services() {
+export default function Services({ showHeader = true }: ServicesProps = {}) {
   const [activeCategory, setActiveCategory] = useState("skin");
 
   return (
@@ -203,20 +208,21 @@ export default function Services() {
       <div className="absolute bottom-20 right-0 w-96 h-96 bg-rose/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <ScrollReveal className="text-center mb-16">
-          <span className="text-champagne text-sm font-semibold uppercase tracking-[0.2em] mb-4 block">
-            Our Services
-          </span>
-          <h2 className="font-[var(--font-display)] text-4xl sm:text-5xl font-bold text-espresso mb-4">
-            Treatments Tailored <span className="gradient-text">to You</span>
-          </h2>
-          <div className="section-divider mx-auto mb-6" />
-          <p className="text-mocha/70 max-w-2xl mx-auto">
-            From transformative facials to meticulous lash artistry, every service is
-            performed by certified specialists using premium products with proven results.
-          </p>
-        </ScrollReveal>
+        {showHeader && (
+          <ScrollReveal className="text-center mb-16">
+            <span className="text-champagne text-sm font-semibold uppercase tracking-[0.2em] mb-4 block">
+              Our Services
+            </span>
+            <h2 className="font-[var(--font-display)] text-4xl sm:text-5xl font-bold text-espresso mb-4">
+              Treatments Tailored <span className="gradient-text">to You</span>
+            </h2>
+            <div className="section-divider mx-auto mb-6" />
+            <p className="text-mocha/70 max-w-2xl mx-auto">
+              From transformative facials to meticulous lash artistry, every service is
+              performed by certified specialists using premium products with proven results.
+            </p>
+          </ScrollReveal>
+        )}
 
         {/* Category tabs */}
         <ScrollReveal delay={200} className="mb-12">

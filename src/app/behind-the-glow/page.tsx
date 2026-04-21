@@ -51,8 +51,8 @@ const pillars = [
 export default function BehindTheGlowPage() {
   return (
     <>
-      <Navbar />
-      <main className="pt-24">
+      <Navbar variant="solid" />
+      <main className="pt-24 border-t border-latte/60 shadow-sm shadow-espresso/5">
         {/* Hero — reuse the magazine split */}
         <BehindTheGlow />
 

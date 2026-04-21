@@ -13,16 +13,22 @@ const navLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+interface NavbarProps {
+  /** Force the "scrolled" visual state. Use `"solid"` on subpages with light heroes so nav text is visible. */
+  variant?: "transparent" | "solid";
+}
+
+export default function Navbar({ variant = "transparent" }: NavbarProps = {}) {
+  const [scrolled, setScrolled] = useState(variant === "solid");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
 
   useEffect(() => {
+    if (variant === "solid") return;
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [variant]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";

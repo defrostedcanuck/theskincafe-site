@@ -41,10 +41,10 @@ export default async function LocationPage({ params }: { params: RouteParams }) 
 
   return (
     <>
-      <Navbar />
+      <Navbar variant="solid" />
       <main className="pt-24">
         {/* Hero */}
-        <section className="relative py-16 sm:py-24 bg-gradient-to-br from-cream via-white to-latte/30 overflow-hidden">
+        <section className="relative py-16 sm:py-24 bg-gradient-to-br from-cream via-white to-latte/30 overflow-hidden border-b border-latte/60 shadow-sm shadow-espresso/5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-champagne/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-rose/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -158,7 +158,7 @@ export default async function LocationPage({ params }: { params: RouteParams }) 
           </div>
         </section>
 
-        <Services />
+        <Services showHeader={false} />
         <BookingCTA />
       </main>
       <Footer />

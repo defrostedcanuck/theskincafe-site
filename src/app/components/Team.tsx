@@ -85,25 +85,32 @@ const team = [
   },
 ];
 
-export default function Team() {
+interface TeamProps {
+  /** Hide the internal section header (use when a page-level hero already provides title + intro). */
+  showHeader?: boolean;
+}
+
+export default function Team({ showHeader = true }: TeamProps = {}) {
   return (
     <section id="team" className="py-24 sm:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream-dark/30 to-cream" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <ScrollReveal className="text-center mb-16">
-          <span className="text-champagne text-sm font-semibold uppercase tracking-[0.2em] mb-4 block">
-            Our Artists
-          </span>
-          <h2 className="font-[var(--font-display)] text-4xl sm:text-5xl font-bold text-espresso mb-4">
-            Meet the <span className="gradient-text">Experts</span>
-          </h2>
-          <div className="section-divider mx-auto mb-6" />
-          <p className="text-mocha/70 max-w-2xl mx-auto">
-            Our team of certified specialists brings passion, precision, and years of
-            expertise to every treatment. Your beauty is in the best hands.
-          </p>
-        </ScrollReveal>
+        {showHeader && (
+          <ScrollReveal className="text-center mb-16">
+            <span className="text-champagne text-sm font-semibold uppercase tracking-[0.2em] mb-4 block">
+              Our Artists
+            </span>
+            <h2 className="font-[var(--font-display)] text-4xl sm:text-5xl font-bold text-espresso mb-4">
+              Meet the <span className="gradient-text">Experts</span>
+            </h2>
+            <div className="section-divider mx-auto mb-6" />
+            <p className="text-mocha/70 max-w-2xl mx-auto">
+              Our team of certified specialists brings passion, precision, and years of
+              expertise to every treatment. Your beauty is in the best hands.
+            </p>
+          </ScrollReveal>
+        )}
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {team.map((member, i) => (

@@ -5,13 +5,12 @@ import Image from "next/image";
 import { Menu, X, Phone, MapPin, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Team", href: "#team" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Locations", href: "#locations" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Team", href: "/team" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Locations", href: "/#locations" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {

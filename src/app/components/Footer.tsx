@@ -1,14 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Heart, Camera, Globe, Phone, Mail } from "lucide-react";
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Our Team", href: "#team" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Locations", href: "#locations" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Our Team", href: "/team" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Locations", href: "/#locations" },
+  { label: "Gilbert", href: "/locations/gilbert" },
+  { label: "Scottsdale", href: "/locations/scottsdale" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const serviceLinks = [
@@ -88,12 +90,12 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm hover:text-champagne transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -107,12 +109,12 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {serviceLinks.map((service) => (
                 <li key={service}>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/services"
                     className="text-sm hover:text-champagne transition-colors"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

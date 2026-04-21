@@ -1,40 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 import { MapPin, Phone, Clock, Navigation, ArrowRight } from "lucide-react";
-
-const locations = [
-  {
-    name: "Gilbert",
-    address: "4100 S Lindsay Rd #121",
-    city: "Gilbert, AZ 85297",
-    phone: "(480) 619-0046",
-    note: null,
-    iconColor: "text-champagne",
-    gradient: "from-champagne to-champagne-dark",
-    image: "/images/salon-interior.jpg",
-    mapQuery: "4100+S+Lindsay+Rd+%23121+Gilbert+AZ+85297",
-    bookingUrl: "https://book.squareup.com/appointments/y5eu65pg42prz2/location/WVJ7770QWMRGA/availability",
-  },
-  {
-    name: "Scottsdale",
-    address: "10333 N Scottsdale Rd, Unit 1",
-    city: "Scottsdale, AZ 85253",
-    phone: "(480) 619-0046",
-    note: "Inside Blush Skin & Wax",
-    iconColor: "text-rose",
-    gradient: "from-rose to-rose-dark",
-    image: "/images/spa-candles.jpg",
-    mapQuery: "10333+N+Scottsdale+Rd+Unit+1+Scottsdale+AZ+85253",
-    bookingUrl: "https://book.squareup.com/appointments/y5eu65pg42prz2/location/86SPWSYBFQR7Z/services/OGM2CC55EWUWGQEA73EXVYUN?savt=9af9b333-518a-4f8b-a281-58f492606f9b",
-  },
-];
-
-const hours = [
-  { day: "Monday \u2013 Thursday", time: "10:00 AM \u2013 8:00 PM" },
-  { day: "Friday", time: "9:00 AM \u2013 5:00 PM" },
-  { day: "Saturday", time: "9:00 AM \u2013 6:00 PM" },
-  { day: "Sunday", time: "2:00 PM \u2013 8:00 PM" },
-];
+import { locations, hoursOfOperation as hours } from "../lib/locations";
 
 export default function Locations() {
   return (
@@ -93,7 +61,7 @@ export default function Locations() {
                       <MapPin size={16} className={`${loc.iconColor} mt-0.5 shrink-0`} />
                       <div>
                         <p className="text-mocha text-sm">{loc.address}</p>
-                        <p className="text-mocha text-sm">{loc.city}</p>
+                        <p className="text-mocha text-sm">{loc.city}, {loc.state} {loc.postalCode}</p>
                         {loc.note && (
                           <p className="text-mocha/50 text-xs mt-1 italic">{loc.note}</p>
                         )}
@@ -110,15 +78,24 @@ export default function Locations() {
                     </div>
                   </div>
 
-                  <a
-                    href={loc.bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 bg-gradient-to-r ${loc.gradient} text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg transition-all hover:-translate-y-0.5 btn-shimmer`}
-                  >
-                    Book at {loc.name}
-                    <ArrowRight size={14} />
-                  </a>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a
+                      href={loc.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 bg-gradient-to-r ${loc.gradient} text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg transition-all hover:-translate-y-0.5 btn-shimmer`}
+                    >
+                      Book at {loc.name}
+                      <ArrowRight size={14} />
+                    </a>
+                    <Link
+                      href={`/locations/${loc.slug}`}
+                      className="inline-flex items-center gap-1 text-espresso text-sm font-semibold hover:text-champagne transition-colors"
+                    >
+                      Visit {loc.name} page
+                      <ArrowRight size={14} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

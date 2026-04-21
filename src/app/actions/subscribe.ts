@@ -20,7 +20,7 @@ export async function subscribeEmail(
   try {
     const existing = await square.customers.search({
       query: { filter: { emailAddress: { exact: email } } },
-      limit: 1,
+      limit: BigInt(1),
     });
 
     if (existing.customers && existing.customers.length > 0) {

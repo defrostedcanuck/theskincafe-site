@@ -49,7 +49,7 @@ describe('subscribeEmail', () => {
     expect(searchMock).toHaveBeenCalledTimes(1);
     expect(searchMock).toHaveBeenCalledWith({
       query: { filter: { emailAddress: { exact: 'jane@example.com' } } },
-      limit: 1,
+      limit: BigInt(1),
     });
     expect(createMock).toHaveBeenCalledTimes(1);
     const call = createMock.mock.calls[0][0];
